@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="reset.css" />
-		<link rel="stylesheet" href="style.css" />
-		<title>WKP7</title>
-	</head>
-	<body>
-		<script src="script.js"></script>
-	</body>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>WKP7</title>
+</head>
+
+<body>
+    <div class="form-container">
+        <form action="post" class="form">
+            <div class="title col">
+                <label class="label" for="bookTitle">Title</label>
+                <input type="text" name="title" id="bookTitle" autocomplete="false" placeholder="Title">
+            </div>
+            <div class="author col">
+                <label class="label" for="bookAuthor">Book author</label>
+                <input type="text" name="author" id="bookAuthor" autocomplete="false" placeholder=" Book author">
+            </div>
+            <div class="genre col">
+                <label class="label" for="bookGenre">Book genre</label>
+                <input type="text" name="genre" id="bookGenre" autocomplete="false" placeholder="Genre">
+            </div>
+            <div class="pages col"><label class="label" for="bookPages">Book pages</label><input type="text" name="pages" id="bookPages" autocomplete="false" placeholder="Number of pages"></div>
+            <div class="status col"><label class="label" for="bookStatus">Book status</label><input type="text" name="status" id="bookStatus" autocomplete="false" placeholder="Read"></div>
+            <div class="button">
+                <button type="submit" class="btn submit">Add</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
 </html>

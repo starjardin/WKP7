@@ -149,7 +149,6 @@ const deleteBooks = (id) => {
 //Evnet listener to delete the button onece it get clicked.
 tableBody.addEventListener('click', (e) => {
   id = Number(e.target.value);
-  console.log(id);
   if (e.target.matches('.delete')) {
     deleteBooks(id);
   };

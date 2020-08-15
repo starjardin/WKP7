@@ -54,13 +54,10 @@ function generateBooksHeding() {
       </tr>
       </thead>`
     tableHead.innerHTML = tabelHeadingHtml;
-}
-
-const booksHeading = generateBooksHeding();
+};
 
 //Handle submit button
-let bookStorage = [];
-
+let bookStorage = [...books];
 const handleSubmitData = (e) => {
   e.preventDefault();
   const form = e.target;
@@ -68,7 +65,6 @@ const handleSubmitData = (e) => {
   const genre = form.genre.value;
   const author = form.author.value;
   const pages = form.pages.value;
-
   const newBooks = {
     title,
     author,
@@ -98,10 +94,9 @@ const handleSubmitData = (e) => {
     tableBody.innerHTML = html;
   e.target.reset();
   //Custom event, that will launch the event whenever it should be.
-  tableBody.dispatchEvent(new CustomEvent('booksUpdated'));
+  formEl.dispatchEvent(new CustomEvent('booksUpdated'));
 };
 
-bookStorage = [...books];
 const generateBookLists = () => {
   const html = bookStorage.map(book => 
     `<tr class="table-row">
@@ -131,33 +126,37 @@ const mirrorToLocalStorage = () => {
 const restoreFromLocalStorage = () => {
   //This will remember your data when you refresh your page
   const listOfBooks = JSON.parse(localStorage.getItem('bookStorage'));
-  //Whatever length you have, that will be the inner html
+  //Whatever length your array have, that will be the inner html
   if (listOfBooks.length) {
     bookStorage.push(...listOfBooks);
     console.log(listOfBooks.length);
   };
-  tableBody.dispatchEvent(new CustomEvent('booksUpdated'));
+  formEl.dispatchEvent(new CustomEvent('booksUpdated'));
 };
 
+const booksHeading = generateBooksHeding();
+const booksContent = generateBookLists();
+
+//Deleting books
 const deleteBooks = (id) => {
   //Filter the bookStorage and the left will be your list (the ones which did not have clicked)
   bookStorage = bookStorage.filter(book => book.id !== id);
+  console.log(bookStorage);
   //Custom event
-  tableBody.dispatchEvent(new CustomEvent('booksUpdated'));
+  formEl.dispatchEvent(new CustomEvent('booksUpdated'));
 };
 
 //Evnet listener to delete the button onece it get clicked.
 tableBody.addEventListener('click', (e) => {
   id = Number(e.target.value);
+  console.log(id);
   if (e.target.matches('.delete')) {
     deleteBooks(id);
-    console.log("Hello world")
   };
 });
 
-//Add evnent listener here
+//Add event listener here
 formEl.addEventListener("submit", handleSubmitData);
-window.addEventListener('DOMContentLoaded', generateBookLists);
-tableBody.addEventListener('booksUpdated', handleSubmitData);
-tableBody.addEventListener('booksUpdated', mirrorToLocalStorage);
-// restoreFromLocalStorage();
+formEl.addEventListener('booksUpdated', generateBookLists);
+formEl.addEventListener('booksUpdated', mirrorToLocalStorage);
+restoreFromLocalStorage();

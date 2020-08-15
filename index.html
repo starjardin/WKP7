@@ -1,37 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
     <title>WKP7</title>
-</head>
+  </head>
 
-<body>
-    <div class="form-container">
-        <form action="post" class="form">
-            <div class="title col">
-                <label class="label" for="bookTitle">Title</label>
-                <input type="text" name="title" id="bookTitle" autocomplete="false" placeholder="Title">
-            </div>
-            <div class="author col">
-                <label class="label" for="bookAuthor">Book author</label>
-                <input type="text" name="author" id="bookAuthor" autocomplete="false" placeholder=" Book author">
-            </div>
-            <div class="genre col">
-                <label class="label" for="bookGenre">Book genre</label>
-                <input type="text" name="genre" id="bookGenre" autocomplete="false" placeholder="Genre">
-            </div>
-            <div class="pages col"><label class="label" for="bookPages">Book pages</label><input type="text" name="pages" id="bookPages" autocomplete="false" placeholder="Number of pages"></div>
-            <div class="status col"><label class="label" for="bookStatus">Book status</label><input type="text" name="status" id="bookStatus" autocomplete="false" placeholder="Read"></div>
-            <div class="button">
-                <button type="submit" class="btn submit">Add</button>
-            </div>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <form action="." method="POST" class="form">
+          <label class="label" for="bookTitle">Title</label>
+          <input type="text" name="title" id="bookTitle" placeholder="Title" value="Title"
+            required>
+          <label class="label" for="bookAuthor">Book author</label>
+          <input type="text" name="author" id="bookAuthor" placeholder=" Book author" value="Author"
+            required>
+          <label class="label" for="bookGenre">Book genre</label>
+          <select name="genre">
+            <option value="fiction">Fiction</option>
+            <option value="drama">Drama</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="it">IT</option>
+            <option value="design">Design</option>
+            <option value="memoir">Memoir</option>
+          </select>
+          <label class="label" for="bookPages">Book pages</label>
+          <input type="text" name="pages" id="bookPages"
+            placeholder="Number of pages" value="6734" required>
+          <label class="label" for="bookStatus">Book status</label>
+          <input type="text" name="status"
+          id="bookStatus" placeholder="Read" value="Hello" required>
+          <button type="submit" class="btn submit">Add</button>
         </form>
+      </div>
+      <div class="books-container">
+        <table class="table">
+          <thead class="table-head">
+
+          </thead>
+          <tbody class="table-body">
+
+          </tbody>
+        </table>
+      </div>
     </div>
-    <script src="script.js"></script>
-</body>
+    <!-- <script src="script.js"></script> -->
+    <script src="script2.js"></script>
+  </body>
 
 </html>

@@ -16,9 +16,14 @@ body {
     flex-wrap: wrap;
 }
 
-input {
+input,
+select {
     display: block;
     margin: .5rem;
+}
+
+select {
+  padding: .2em;
 }
 
 .form {
@@ -33,4 +38,19 @@ input {
     text-transform: uppercase;
     color: white;
     border-radius: 3px;
+}
+
+;
+.table {
+    display: table;
+    border-collapse: collapse;
+    padding-block-end: 2rem;
+}
+
+table th {
+    padding: 1rem;
+}
+
+table td {
+    padding: 1rem;
 }

@@ -1,35 +1,21 @@
-# WKP7 - Library
+# WKP7 Report.
 
-### Hey team!
+## Structure of my code.
+First of all the project was not fullfiled, however, some of the steps were achived. I did create an array of obects (collection) to store the existing books at the first time the page is reloaded. Secondly, I created html file which contains the form fieled in which we add new books, and a void table element in where we place the books, after that, I grabed some elements that I thought would be useful and added event listener to the form element. I created a function that generates the existing books and a function that generate the new books form the users. I could delete but it is a bit strange because when we refresh and it adds a lot of books.After all, I did not get round to doing the checkbox.
 
-Hope you are ready for a new challenge. I have a nice one for you this week. We're going to build a library management application. The application will consist on a form to add a book, and a table listing all the books. After submitting the form, the new book will appear on the book table.
+## Improve I would make if I had more time.
+If I had more time, first I would probably fixe the problem that causes me trouble when I reload the page. Then, I would work on the checkbox, to tackle these steps might help, grab the checkboxes, loop through the array and check if the object proerty read if true or false and set the value of the checkbox (just a generale idea). Lastly, cleaning up the code by adding lots of comments to the code as much as it should be to make it a lot more understandble.
 
-### Here is the mockup of our library app.
+## Did I learn anything.
 
-![assets/wkp7-library.png](assets/wkp7-library.png)
+Oh, yes indeed I did learn something such as I know how the delete buttons work by using filter. I did understand why we use `custom event` even though it is still baffles me so far. Sending data to local storage and geting them back (`setItem`, `getItem`, JSON.stringify and JSON.parse).
 
-[You can also access the design through figma.](https://www.figma.com/file/FoD2jZb5oOGZvTUMop0nbA/WKP7?node-id=1%3A2)
+## The most challanging part.
 
-### A book needs those attributes :
+Most of it was challenging, however, it was fun to make it but if I had to say a thing I would probably say that the most challenging part was to store data to local storage as well as the `Custom event is still a bit obscure to me`. After reloading the page.
 
--   A title
--   An author
--   A genre (Mystery, Thriller, Fiction, Non-fiction, Fantasy, Design, Memoirs...)
--   A number of pages
--   A status (Read or not)
+## Explanations about specific parts
+I would absolutely say, I need explanations about the `custom event` updatiing `custom event`, and parameteres given to functions. Why we do need state sometimes but not using the first original array.
 
-### Requirements :
-
--   When users load the app for the first time, a list of 3 books minimum should already be present on the list. The list will always be generated dynamically with some state in the javascript.
--   Users should be able to change the read attribute status by clicking the checkbox (and the changes will be reflected in the app state)
--   Users should be able to delete a book from the list by clicking the trash icon (and reflect that in the app state as well)
--   When a user come back to the app with the same browser, they should see the same book list as it was, before they left the app. Save the current book list to your browser's _Local Storage_.
-
-### Tips :
-
--   Focus on the features first, and if you have some time left, try to replicate this design.
--   Start by choosing the book data structure, and create a few of them in the code.
--   Focus on your basic app functionality first, and then try to save the state of your app to _Local Storage_.
--   I suggest you to look back to the Shopping List exercise we did together (Video 57). There is a lot of similarities between the exercise and this project 😉
-
-### Good luck team 🙌
+## Comments
+I don't have a lot to say but it's all about the challenge if you love challanges, it looks amazing when the problem is solved.
